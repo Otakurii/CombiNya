@@ -16,6 +16,10 @@ public class DragnDropSystem : MonoBehaviour
     private GameObject dragingDocSprite;          //game object of the icon
     //private Image dragDocIconImage;             //image that appears n follows mouse cursor when dragged
 
+    [SerializeField] private float scaleBigger;
+    private Vector3 oriScale;
+    [SerializeField] private int maxSortingInt = 0;
+
     private void Awake()
     {
         cam = Camera.main;
@@ -37,7 +41,6 @@ public class DragnDropSystem : MonoBehaviour
     private void Update()
     {
         if (Mouse.current == null && EventSystem.current.IsPointerOverGameObject()) return;
-
 
         //clicked the mouse, begin drag
         if (leftClickAction.action.WasPressedThisFrame())
@@ -77,28 +80,39 @@ public class DragnDropSystem : MonoBehaviour
 
         if (hit.collider == null) return;
         
-        //Debug.Log("raycast hit object of: " + hit.collider.name);
+        //if hit object has doc script n main table tag, let the sprite become 
         if (hit.collider.TryGetComponent(out Documents doc))
         {
             //Debug.Log("dis world item is a Document, can drag");
 
+            
             draggingDoc = doc.docDatas;
             dragingDocSprite = hit.collider.gameObject;
 
             //offset so it wouldnt snap mouse to the pivot
             offset = dragingDocSprite.transform.position - (Vector3)worldPos;
 
-            SpriteRenderer sr = dragingDocSprite.GetComponent<SpriteRenderer>();
-            if (sr != null)
+            maxSortingInt++;
+
+            // sprite renderers
+            SpriteRenderer[] renderers = dragingDocSprite.GetComponentsInChildren<SpriteRenderer>(true);
+            foreach (var r in renderers)
             {
-                sr.sortingOrder = 10;
+                r.sortingOrder = maxSortingInt + 1;
             }
 
-            Canvas canvas = dragingDocSprite.GetComponentInChildren<Canvas>();
+            // canvas
+            Canvas canvas = dragingDocSprite.GetComponentInChildren<Canvas>(true);
             if (canvas != null)
             {
-                canvas.sortingOrder = 10;
+                canvas.overrideSorting = true;
+                canvas.sortingOrder = maxSortingInt + 1;
             }
+            //scale
+            oriScale = dragingDocSprite.transform.localScale;
+            dragingDocSprite.transform.localScale = new Vector3(scaleBigger, scaleBigger, scaleBigger);
+            
+          
 
             // ---------- PLAY SOUND ----------
             //if (audioSource != null && pickItemSfx != null)
@@ -122,13 +136,26 @@ public class DragnDropSystem : MonoBehaviour
         SpriteRenderer sr = dragingDocSprite.GetComponent<SpriteRenderer>();
         if (sr != null)
         {
-            sr.sortingOrder = 0;
+            sr.sortingOrder = maxSortingInt;
         }
         Canvas canvas = dragingDocSprite.GetComponentInChildren<Canvas>();
         if (canvas != null)
         {
-            canvas.sortingOrder = 0;
+            canvas.sortingOrder = maxSortingInt;
         }
+        SpriteRenderer srStamp = dragingDocSprite.GetComponent<SpriteRenderer>();
+
+        if (srStamp == null)
+        {
+            srStamp = dragingDocSprite.GetComponentInChildren<SpriteRenderer>(true);
+        }
+        if (srStamp != null)
+        {
+            srStamp.sortingOrder = maxSortingInt;
+        }
+
+        //scale
+        dragingDocSprite.transform.localScale = oriScale;
 
         //put the item at the place of mouse is last at
         draggingDoc = null;

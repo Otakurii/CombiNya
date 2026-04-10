@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63fc0d872f9d17c45b297db064e78919, type: 3}
+  m_Name: TestNPCDatas
+  m_EditorClassIdentifier: Assembly-CSharp::NPCDatas
+  docsPrefab: {fileID: 780394639422337771, guid: ffa47e10d9166fe46a06b5d3fd487ee4, type: 3}
+  docDatas:
+  - {fileID: 11400000, guid: 2fa8b25888cdddc409a12ef04b2c662f, type: 2}
+  - {fileID: 11400000, guid: 77df1f514912d1447838f758eff67254, type: 2}
+  NPCSprite: {fileID: 21300000, guid: 68564f74dd9f85642936e0a3f34bf9be, type: 3}
+  NPCDialogues:
+  - hi
+  - testing
+  - 123

@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e33ac4a502f5dbd4e96614ba6758e4bd, type: 3}
   m_Name: TestDocuments 1
   m_EditorClassIdentifier: Assembly-CSharp::Documents
-  docSpriteBig: {fileID: 21300000, guid: d20fbb62dba464a4c8ea6af4be314b16, type: 3}
-  docSpriteSmall: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  docSpriteBig: {fileID: -1777577539994510584, guid: d20fbb62dba464a4c8ea6af4be314b16, type: 3}
+  docSpriteSmall: {fileID: 21300000, guid: 398461da8d47ad9429d152e04da766a0, type: 3}
   docTexts: this is test docs 2
-  docType: 0
+  docType: 1
+  stampAns: 1
