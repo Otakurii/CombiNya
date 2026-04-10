@@ -4,7 +4,7 @@
 PlayerSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 28
-  productGUID: ea550ce9d22e9b846aa5f8260cecb0fe
+  productGUID: 71f77a0e6bb153a489e74a65a7b8f5c7
   AndroidProfiler: 0
   AndroidFilterTouchesWhenObscured: 0
   AndroidEnableSustainedPerformanceMode: 0
@@ -774,10 +774,10 @@ PlayerSettings:
   captureStartupLogs: {}
   activeInputHandler: 1
   windowsGamepadBackendHint: 0
-  cloudProjectId: 5c07922f-620b-47c2-984c-bae14e73e945
+  cloudProjectId: 90166e60-85f1-41ea-8fd6-2e0284ba24ce
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: CombiNya
+  projectName: CombiNya 2026-04-10_17-36-38
   organizationId: otakuri
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
