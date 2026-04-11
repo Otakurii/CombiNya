@@ -114,11 +114,24 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: wayang kulis characters_0
+      name: Indian Spice Merchant
       rect:
         serializedVersion: 2
         x: 279
@@ -126,7 +139,7 @@ TextureImporter:
         width: 308
         height: 428
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -140,7 +153,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wayang kulis characters_1
+      name: Japanese Scholar Monk
       rect:
         serializedVersion: 2
         x: 662
@@ -148,7 +161,7 @@ TextureImporter:
         width: 254
         height: 446
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -162,7 +175,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wayang kulis characters_2
+      name: Javanese Ship Captain
       rect:
         serializedVersion: 2
         x: 980
@@ -170,7 +183,7 @@ TextureImporter:
         width: 257
         height: 446
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -184,7 +197,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wayang kulis characters_3
+      name: Arab Luxury Goods Trader
       rect:
         serializedVersion: 2
         x: 1314
@@ -192,7 +205,7 @@ TextureImporter:
         width: 245
         height: 431
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -206,7 +219,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wayang kulis characters_4
+      name: River Fisherman
       rect:
         serializedVersion: 2
         x: 292
@@ -214,7 +227,7 @@ TextureImporter:
         width: 256
         height: 415
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -228,7 +241,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wayang kulis characters_5
+      name: Port Laborer
       rect:
         serializedVersion: 2
         x: 604
@@ -236,7 +249,7 @@ TextureImporter:
         width: 269
         height: 422
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -250,7 +263,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wayang kulis characters_6
+      name: Royal Envoy of Palembang
       rect:
         serializedVersion: 2
         x: 959
@@ -258,7 +271,7 @@ TextureImporter:
         width: 294
         height: 426
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -275,7 +288,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 055b7bdb80fe7e14e8375ffe95a00b9f
     internalID: 0
     vertices: []
     indices: 
@@ -285,13 +298,13 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      wayang kulis characters_0: 7297391268332060746
-      wayang kulis characters_1: 7962644223748816215
-      wayang kulis characters_2: 8798716461247967889
-      wayang kulis characters_3: 3087629172695876473
-      wayang kulis characters_4: -7657083399073251225
-      wayang kulis characters_5: 6046420328631509802
-      wayang kulis characters_6: 2017113261478989220
+      Arab Luxury Goods Trader: 3087629172695876473
+      Indian Spice Merchant: 7297391268332060746
+      Japanese Scholar Monk: 7962644223748816215
+      Javanese Ship Captain: 8798716461247967889
+      Port Laborer: 6046420328631509802
+      River Fisherman: -7657083399073251225
+      Royal Envoy of Palembang: 2017113261478989220
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

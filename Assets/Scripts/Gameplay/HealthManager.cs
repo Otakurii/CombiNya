@@ -24,14 +24,14 @@ public class HealthManager : MonoBehaviour
         alive = true;
     }
 
-    private void Update()
-    {
-        Debug.Log("Testing only");
-        Health();
-    }
+    //private void Update()
+    //{
+    //    Debug.Log("Testing only");
+    //    Health();
+    //}
 
     //player health function, controls player heart sprites
-    void Health()
+    public void Health()
     {
         if (health > maxHealth)
         {

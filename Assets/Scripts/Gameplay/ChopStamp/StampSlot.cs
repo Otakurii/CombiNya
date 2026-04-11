@@ -5,7 +5,7 @@ public class StampSlot : MonoBehaviour
     public DocumentDatas docData;              // assign from document
     private SpriteRenderer sr;
 
-    private bool hasStamp = false;
+    //private bool hasStamp = false;
 
     private void Start()
     {
@@ -26,11 +26,11 @@ public class StampSlot : MonoBehaviour
     public void PlaceStamp(Stamp stamp)
     {
         //if already has stamp, prevent overwrite
-        if (hasStamp)
-        {
-            Debug.Log("Slot already stamped!");
-            return;
-        }
+        //if (hasStamp)
+        //{
+        //    Debug.Log("Slot already stamped!");
+        //    return;
+        //}
 
 
         // set sprite visually
@@ -39,7 +39,7 @@ public class StampSlot : MonoBehaviour
             sr.sprite = stamp.stampSpriteIcon;
         }
 
-        hasStamp = true;
+        //hasStamp = true;
 
         // check correctness
         if (stamp.stampType == docData.stampAns)

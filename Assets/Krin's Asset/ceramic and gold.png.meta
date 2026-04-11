@@ -99,11 +99,24 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: ceramic and gold_0
+      name: ceramic
       rect:
         serializedVersion: 2
         x: 12
@@ -111,7 +124,7 @@ TextureImporter:
         width: 409
         height: 306
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -125,7 +138,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ceramic and gold_1
+      name: gold
       rect:
         serializedVersion: 2
         x: 623
@@ -133,7 +146,7 @@ TextureImporter:
         width: 454
         height: 271
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -150,7 +163,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 6672065d819f95544b3d1098bc2e5ba5
     internalID: 0
     vertices: []
     indices: 
@@ -160,8 +173,8 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      ceramic and gold_0: -2991066716013733104
-      ceramic and gold_1: -2021746895325981491
+      ceramic: -2991066716013733104
+      gold: -2021746895325981491
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -105,11 +105,24 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Cargos_0
+      name: black pepper
       rect:
         serializedVersion: 2
         x: 134
@@ -117,7 +130,7 @@ TextureImporter:
         width: 336
         height: 266
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -131,7 +144,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cargos_1
+      name: rice
       rect:
         serializedVersion: 2
         x: 534
@@ -139,7 +152,7 @@ TextureImporter:
         width: 304
         height: 251
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -153,7 +166,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cargos_2
+      name: textiles
       rect:
         serializedVersion: 2
         x: 1058
@@ -161,7 +174,7 @@ TextureImporter:
         width: 362
         height: 151
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -175,7 +188,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cargos_3
+      name: daun
       rect:
         serializedVersion: 2
         x: 141
@@ -183,7 +196,7 @@ TextureImporter:
         width: 363
         height: 251
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -200,7 +213,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 3655357d02620d7419bef34abe5cf25d
     internalID: 0
     vertices: []
     indices: 
@@ -210,10 +223,10 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Cargos_0: 4315890946122258498
-      Cargos_1: 6910747883891147593
-      Cargos_2: 4428534521095212122
-      Cargos_3: 8300144398062691012
+      black pepper: 4315890946122258498
+      daun: 8300144398062691012
+      rice: 6910747883891147593
+      textiles: 4428534521095212122
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

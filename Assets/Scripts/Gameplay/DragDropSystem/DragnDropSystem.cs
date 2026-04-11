@@ -155,6 +155,9 @@ public class DragnDropSystem : MonoBehaviour
             canvas.sortingOrder = maxSortingInt;
         }
 
+        // reset scale
+        dragingDocSprite.transform.localScale = oriScale;
+
         //put the item at the place of mouse is last at
         dragingDocSprite = null;
     }
