@@ -6,8 +6,6 @@ using UnityEngine;
 
 public class NPCDatas : ScriptableObject
 {
-    public GameObject docsPrefab;
-
     public DocumentDatas[] docDatas;
 
     public Sprite NPCSprite;            //sprite of NPC

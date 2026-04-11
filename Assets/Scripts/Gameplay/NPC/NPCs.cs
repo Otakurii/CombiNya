@@ -15,7 +15,6 @@ public class NPCs : MonoBehaviour
 
         SpawnDocs();
         SpawnNPC();
-        SpawnDialogue();
     }
 
     void SpawnDocs()
@@ -23,14 +22,28 @@ public class NPCs : MonoBehaviour
         //instantiate docs 
         for (int i = 0; i < NPCDatas.docDatas.Length; i++)
         {
+            
             Vector3 randPos = new Vector3(Random.Range(0,7), Random.Range(-3,6));           //this is to randomize the x and y position
 
-            GameObject docObj = Instantiate(NPCDatas.docsPrefab, randPos, Quaternion.identity);
 
+            DocumentDatas data = NPCDatas.docDatas[i];
+
+            //get correct prefab from the documentData itself
+            GameObject prefab = data.GetDocPrefab();
+
+            if (prefab == null)
+            {
+                Debug.LogError("Prefab is null for doc type: " + data.docType);
+                continue;
+            }
+
+            GameObject docObj = Instantiate(prefab, randPos, Quaternion.identity);
+
+            //assign data after instantiate prefab
             Documents doc = docObj.GetComponent<Documents>();
             if (doc != null)
             {
-                doc.SetData(NPCDatas.docDatas[i]);
+                doc.SetData(data);
             }
         }
     }
@@ -40,8 +53,4 @@ public class NPCs : MonoBehaviour
         spriteRenderer.sprite = NPCDatas.NPCSprite;
     }
 
-    void SpawnDialogue()
-    {
-
-    }
 }

@@ -12,7 +12,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e33ac4a502f5dbd4e96614ba6758e4bd, type: 3}
   m_Name: TestDocuments
   m_EditorClassIdentifier: Assembly-CSharp::Documents
-  docSpriteBig: {fileID: -1777577539994510584, guid: d20fbb62dba464a4c8ea6af4be314b16, type: 3}
-  docSpriteSmall: {fileID: -7704038863292052270, guid: a9d987667739d80448f1caa6676895aa, type: 3}
-  docTexts: omg hi this is my permit my name is bla bla bla
+  prefabEntries:
+  - type: 0
+    prefab: {fileID: 7309800460679450597, guid: 82802f8dd75cd6240a8482d9b81adcc6, type: 3}
+  docSpriteSmall:
+  - {fileID: -1247886878105981970, guid: 5df066770737aee41ba45df25ae4dcf9, type: 3}
+  - {fileID: 36001294328384769, guid: b053b1a8979f24441a6c4a5ed55ce047, type: 3}
+  - {fileID: -6963912225028141737, guid: ee2cd5a0fceac6749b433df5a4702445, type: 3}
   docType: 0
+  stampAns: 0
+  nameAns: Sultan Bin Mohammand
+  originAns: Srivijaya
+  roleAns: Captain
+  IDPicAns: {fileID: 21300000, guid: 68564f74dd9f85642936e0a3f34bf9be, type: 3}
+  shipAns: 
+  captainAns: 
+  cargoAns: 
+  signs: {fileID: 0}
+  logoAns: {fileID: 0}
