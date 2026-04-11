@@ -52,26 +52,13 @@ public class AudioManager : MonoBehaviour
         // Match your scene names here
         switch (sceneName)
         {
-            case "Main Menu": return "Main Menu BGM";
+            case "MainMenu": return "BGM MainMenu";
 
-            case "Tutorial": return "Enchantment Fantasy";
-
-            case "Chapter1Puzzle1": return "Puzzle 1 BGM";
-
-            case "Chapter1Puzzle2": return "Puzzle 2 BGM";
-
-            case "Chapter1Puzzle3": return "Puzzle 3 BGM";
-
-            case "Chapter2Puzzle4": return "Puzzle 4 BGM";
-
-            case "Chapter2Puzzle6": return "Puzzle 6 BGM";
-
-            case "Chapter3Inside": return "Chap3 BGM";
-
-            case "Chapter3Outside": return "Chap3 BGM";
+            case "GameplayScene": return "BGM Gameplay";
 
 
-            default: return "Main Menu BGM"; //fallback just in case
+
+            default: return "BGM MainMenu"; //fallback just in case
         }
     }
 

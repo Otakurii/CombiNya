@@ -12,7 +12,6 @@ public class DragnDropSystem : MonoBehaviour
 
     [Header("State")]
     private Vector2 offset;
-    private DocumentDatas draggingDoc = null;
     private GameObject dragingDocSprite;          //game object of the icon
     //private Image dragDocIconImage;             //image that appears n follows mouse cursor when dragged
 
@@ -40,29 +39,32 @@ public class DragnDropSystem : MonoBehaviour
 
     private void Update()
     {
-        if (Mouse.current == null && EventSystem.current.IsPointerOverGameObject()) return;
+        if (Mouse.current == null) return;
+
+        if (EventSystem.current != null && EventSystem.current.IsPointerOverGameObject())
+            return;
 
         //clicked the mouse, begin drag
         if (leftClickAction.action.WasPressedThisFrame())
         {
-            //Debug.Log("left clicked, trybeginDrag now");
+            Debug.Log("left clicked, trybeginDrag now");
             TryBeginDrag();
         }
 
 
         //dragging n moving icon
-        if (draggingDoc != null && dragingDocSprite != null)
+        if (dragingDocSprite != null)
         {
-            //Debug.Log("dragging doc icon rn");
+            Debug.Log("dragging doc icon rn");
             Vector3 pos = cam.ScreenToWorldPoint(Mouse.current.position.ReadValue());
-            pos.z = -0.5f;
+            pos.z = dragingDocSprite.transform.position.z;
             dragingDocSprite.transform.position = pos + (Vector3)offset;
         }
 
         //release the mouse, stop dragging
         if (leftClickAction.action.WasReleasedThisFrame())
         {
-            //Debug.Log("released left click, tryendDrag now");
+            Debug.Log("released left click, tryendDrag now");
             TryEndDrag();
         }
 
@@ -73,92 +75,87 @@ public class DragnDropSystem : MonoBehaviour
     private void TryBeginDrag()
     {
         //raycast2D from camera to click position
-        Vector2 mousePos = Mouse.current.position.ReadValue();
-        Vector2 worldPos = cam.ScreenToWorldPoint(mousePos);
-        RaycastHit2D hit = Physics2D.Raycast(worldPos, Vector2.zero);
-
-
-        if (hit.collider == null) return;
+        Vector3 worldPos3 = cam.ScreenToWorldPoint(Mouse.current.position.ReadValue());
+        Vector2 worldPos = new Vector2(worldPos3.x, worldPos3.y);
         
+        Collider2D[] hits = Physics2D.OverlapPointAll(worldPos);
+
+        if (hits.Length == 0) return;
+
+
         //if hit object has doc script n main table tag, let the sprite become 
-        if (hit.collider.TryGetComponent(out Documents doc))
+        foreach (var hit in hits)
         {
-            //Debug.Log("dis world item is a Document, can drag");
+            Documents doc = hit.GetComponentInParent<Documents>();
 
-            
-            draggingDoc = doc.docDatas;
-            dragingDocSprite = hit.collider.gameObject;
-
-            //offset so it wouldnt snap mouse to the pivot
-            offset = dragingDocSprite.transform.position - (Vector3)worldPos;
-
-            maxSortingInt++;
-
-            // sprite renderers
-            SpriteRenderer[] renderers = dragingDocSprite.GetComponentsInChildren<SpriteRenderer>(true);
-            foreach (var r in renderers)
+            if (doc != null)
             {
-                r.sortingOrder = maxSortingInt + 1;
-            }
+                dragingDocSprite = doc.gameObject;
 
-            // canvas
-            Canvas canvas = dragingDocSprite.GetComponentInChildren<Canvas>(true);
-            if (canvas != null)
-            {
-                canvas.overrideSorting = true;
-                canvas.sortingOrder = maxSortingInt + 1;
-            }
-            //scale
-            oriScale = dragingDocSprite.transform.localScale;
-            dragingDocSprite.transform.localScale = new Vector3(scaleBigger, scaleBigger, scaleBigger);
-            
-          
+                offset = dragingDocSprite.transform.position - (Vector3)worldPos;
 
-            // ---------- PLAY SOUND ----------
-            //if (audioSource != null && pickItemSfx != null)
-            //{
-            //    audioSource.PlayOneShot(pickItemSfx);
-            //}
+                StartDraggingVisuals();
+
+                // ---------- PLAY SOUND ----------
+                //if (audioSource != null && pickItemSfx != null)
+                //{
+                //    audioSource.PlayOneShot(pickItemSfx);
+                //}
+
+                return;
+            }
         }
+
+        
+    
     }
 
 
     private void TryEndDrag()
     {
-        if (draggingDoc == null || dragingDocSprite == null) return;
+        if (dragingDocSprite == null) return;
 
-        //when put, put the image on the most top
-        Vector3 pos = cam.ScreenToWorldPoint(Mouse.current.position.ReadValue());
-        pos.z = -0.5f;
-
-        dragingDocSprite.transform.position = pos + (Vector3)offset;
-
-        SpriteRenderer sr = dragingDocSprite.GetComponent<SpriteRenderer>();
-        if (sr != null)
+        // reset sorting
+        SpriteRenderer[] renderers = dragingDocSprite.GetComponentsInChildren<SpriteRenderer>(true);
+        foreach (var r in renderers)
         {
-            sr.sortingOrder = maxSortingInt;
+            r.sortingOrder = maxSortingInt;
         }
-        Canvas canvas = dragingDocSprite.GetComponentInChildren<Canvas>();
+
+        Canvas canvas = dragingDocSprite.GetComponentInChildren<Canvas>(true);
         if (canvas != null)
         {
             canvas.sortingOrder = maxSortingInt;
-        }
-        SpriteRenderer srStamp = dragingDocSprite.GetComponent<SpriteRenderer>();
-
-        if (srStamp == null)
-        {
-            srStamp = dragingDocSprite.GetComponentInChildren<SpriteRenderer>(true);
-        }
-        if (srStamp != null)
-        {
-            srStamp.sortingOrder = maxSortingInt;
         }
 
         //scale
         dragingDocSprite.transform.localScale = oriScale;
 
         //put the item at the place of mouse is last at
-        draggingDoc = null;
         dragingDocSprite = null;
+    }
+
+    private void StartDraggingVisuals()
+    {
+        maxSortingInt++;
+
+        // sprite renderers
+        SpriteRenderer[] renderers = dragingDocSprite.GetComponentsInChildren<SpriteRenderer>(true);
+        foreach (var r in renderers)
+        {
+            r.sortingOrder = maxSortingInt + 1;
+        }
+
+        // canvas
+        Canvas canvas = dragingDocSprite.GetComponentInChildren<Canvas>(true);
+        if (canvas != null)
+        {
+            canvas.overrideSorting = true;
+            canvas.sortingOrder = maxSortingInt + 1;
+        }
+
+        // scale
+        oriScale = dragingDocSprite.transform.localScale;
+        dragingDocSprite.transform.localScale = Vector3.one * scaleBigger;
     }
 }

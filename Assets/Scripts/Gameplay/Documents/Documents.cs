@@ -7,7 +7,7 @@ public class Documents : MonoBehaviour
 
     private void Start()
     {
-
+        if (Stamp.IsAnyStampDragging()) return;
     }
 
     public void SetData(DocumentDatas data)

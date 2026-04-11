@@ -8,6 +8,7 @@ public class GameplayUI : MonoBehaviour
     [Header("Panels")]
     public GameObject PauseMenuPanel;
     public GameObject SettingsPanel;
+    public GameObject CargoPanel;
 
     [Header("Input (assign InputActionReferences)")]
     public InputActionReference escButton;             //mouse's delta cursor
@@ -20,6 +21,7 @@ public class GameplayUI : MonoBehaviour
 
         PauseMenuPanel.SetActive(false);
         SettingsPanel.SetActive(false);
+        CargoPanel.SetActive(false);
     }
 
     // Update is called once per frame
@@ -51,12 +53,21 @@ public class GameplayUI : MonoBehaviour
         Time.timeScale = 0.0f;
         PauseMenuPanel.SetActive(true);
         SettingsPanel.SetActive(false);
+        CargoPanel.SetActive(false);
     }
 
     public void OpenSettingsMenu()
     {
         PauseMenuPanel.SetActive(false);
         SettingsPanel.SetActive(true);
+        CargoPanel.SetActive(false);
+    }
+
+    public void OpenCargoPanel()
+    {
+        PauseMenuPanel.SetActive(false);
+        SettingsPanel.SetActive(false);
+        CargoPanel.SetActive(true);
     }
 
     public void CloseAllMenu()
@@ -65,6 +76,7 @@ public class GameplayUI : MonoBehaviour
         //Debug.Log("Close all menus");
         PauseMenuPanel.SetActive(false);
         SettingsPanel.SetActive(false);
+        CargoPanel.SetActive(false);
     }
 
     //public void GoToMainMenu()

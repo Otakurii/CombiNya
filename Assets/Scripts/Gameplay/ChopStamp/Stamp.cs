@@ -1,7 +1,6 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
-using UnityEngine.UIElements;
 
 
 public enum StampType { Approved, Declined };
@@ -19,16 +18,26 @@ public class Stamp : MonoBehaviour
     [Header("Stamp things")]
     private Vector2 offset;
     private Vector2 correctPos;
-    public Sprite stampSpriteIcon;
     private bool isDraggingStamp;
 
+    public Sprite stampSpriteIcon;          //the sprite that will be chopped (accept/declide)
+    public Sprite draggingStampIcon;        //the sprite that will follow the mouse cursor, the top view of stamp
+
     public StampType stampType;
+
+    private SpriteRenderer sr;
+    private Sprite originalSprite;
+    private int originalSortingOrder;
 
     private void Awake()
     {
         cam = Camera.main;
 
         correctPos = transform.position;    //save the starting pos
+
+        sr = GetComponent<SpriteRenderer>();
+        originalSprite = sr.sprite;
+        originalSortingOrder = sr.sortingOrder;
     }
 
     //enables input actions when script is active
@@ -51,6 +60,10 @@ public class Stamp : MonoBehaviour
         if (EventSystem.current != null && EventSystem.current.IsPointerOverGameObject())
             return;
 
+        // prevent multiple stamps dragging
+        if (currentDraggingStamp != null && currentDraggingStamp != this)
+            return;
+
         //clicked the mouse, begin drag
         if (leftClickAction.action.WasPressedThisFrame())
         {
@@ -64,7 +77,7 @@ public class Stamp : MonoBehaviour
         {
             //Debug.Log("dragging doc icon rn");
             Vector3 pos = cam.ScreenToWorldPoint(Mouse.current.position.ReadValue());
-            pos.z = -0.5f;
+            pos.z = transform.position.z;
             transform.position = pos + (Vector3)offset;
         }
 
@@ -82,51 +95,73 @@ public class Stamp : MonoBehaviour
     private void TryBeginDrag()
     {
         //raycast2D from camera to click position
-        Vector2 mousePos = Mouse.current.position.ReadValue();
-        Vector2 worldPos = cam.ScreenToWorldPoint(mousePos);
+        Vector3 worldPos3 = cam.ScreenToWorldPoint(Mouse.current.position.ReadValue());
+        Vector2 worldPos = new Vector2(worldPos3.x, worldPos3.y);
 
-        RaycastHit2D hit = Physics2D.Raycast(worldPos, Vector2.zero);
+        Collider2D[] hits = Physics2D.OverlapPointAll(worldPos);
 
-        if (hit.collider == null) return;
+        if (hits.Length == 0) return;
 
-        // only start dragging if clicking THIS stamp
-        if (hit.collider.gameObject == gameObject)
+        foreach (var hit in hits)
         {
-            currentDraggingStamp = this;
-            isDraggingStamp = true;
-            offset = transform.position - (Vector3)worldPos;
+            Stamp stamp = hit.GetComponentInParent<Stamp>();
+
+            if (stamp == this)
+            {
+                currentDraggingStamp = this;
+                isDraggingStamp = true;
+
+                offset = transform.position - (Vector3)worldPos;
+
+                //change stamp sprite
+                if (draggingStampIcon != null)
+                    sr.sprite = draggingStampIcon;
+
+                //bring sprite to front
+                originalSortingOrder = sr.sortingOrder;
+                sr.sortingOrder = 9999;
+
+                return;
+            }
         }
     }
 
     private void TryEndDrag()
     {
         if (!isDraggingStamp) return;
-        //only current stamp can activate TryEndDrag()
-        if (currentDraggingStamp != this) return;
+        
+        if (currentDraggingStamp != this) return;           //only current stamp can activate TryEndDrag()
 
-        Vector2 mousePos = Mouse.current.position.ReadValue();
-        Vector2 worldPos = cam.ScreenToWorldPoint(mousePos);
+        Vector3 worldPos3 = cam.ScreenToWorldPoint(Mouse.current.position.ReadValue());
+        Vector2 worldPos = new Vector2(worldPos3.x, worldPos3.y);
 
-        RaycastHit2D hit = Physics2D.Raycast(worldPos, Vector2.zero, Mathf.Infinity, slotLayer);
+        Collider2D hit = Physics2D.OverlapPoint(worldPos, slotLayer);
 
         //if hit object has the stamp slot script
-        if (hit.collider != null)
+        if (hit != null)
         {
             //Debug.Log("Hit: " + hit.collider.name);
 
-            if (hit.collider.TryGetComponent(out StampSlot slot))
+            if (hit.TryGetComponent(out StampSlot slot))
             {
                 //Debug.Log("Try stamping");
                 slot.PlaceStamp(this);
             }
         }
 
-        //put it back to ori place
+        //put it back to ori place, sorting order, n ori sprite
         transform.position = correctPos;
+
+        sr.sprite = originalSprite;
+        sr.sortingOrder = originalSortingOrder;
+
         isDraggingStamp = false;
         currentDraggingStamp = null;
     }
 
-
+    public static bool IsAnyStampDragging()
+    {
+        return currentDraggingStamp != null;
+    }
 }
 
