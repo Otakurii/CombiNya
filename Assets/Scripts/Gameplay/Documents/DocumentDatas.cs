@@ -18,6 +18,7 @@ public class DocumentDatas : ScriptableObject
     //public GameObject[] docPrefabType;          //how does the doc prefab is 
     public DocPrefabEntry[] prefabEntries;
     public Sprite[] docSpriteSmall;             //how does the doc look like on small table
+    public Sprite[] docSpriteBig;             //how does the doc look like on small table
     public DocumentType docType;                //enum for what type of docs this is
 
     [Header("Answers")]
@@ -66,6 +67,17 @@ public class DocumentDatas : ScriptableObject
         }
 
         return docSpriteSmall[(int)docType];
+    }
+
+    public Sprite GetDocSpriteBig()
+    {
+        if ((int)docType >= docSpriteBig.Length)
+        {
+            Debug.LogError("docSpriteBig array not set correctly!");
+            return null;
+        }
+
+        return docSpriteBig[(int)docType];
     }
 
     public DocumentType GetDocType()

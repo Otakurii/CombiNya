@@ -19,6 +19,10 @@ MonoBehaviour:
   - {fileID: -1247886878105981970, guid: 5df066770737aee41ba45df25ae4dcf9, type: 3}
   - {fileID: 36001294328384769, guid: b053b1a8979f24441a6c4a5ed55ce047, type: 3}
   - {fileID: -6963912225028141737, guid: ee2cd5a0fceac6749b433df5a4702445, type: 3}
+  docSpriteBig:
+  - {fileID: -3904066095602199870, guid: 737084f196f2ce1408943819d0f25295, type: 3}
+  - {fileID: 328790315513086827, guid: dfbc39f2830dd4b46bbab0e4d5afc32a, type: 3}
+  - {fileID: -8704500929520623686, guid: 24e509227f7026c40a156e602c19abce, type: 3}
   docType: 0
   stampAns: 0
   nameAns: Sultan Bin Mohammand
@@ -30,3 +34,6 @@ MonoBehaviour:
   cargoAns: 
   signs: {fileID: 0}
   logoAns: {fileID: 0}
+  goodsAns: 
+  quantityAns: 
+  IDPic: {fileID: 0}

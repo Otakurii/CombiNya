@@ -79,11 +79,11 @@ public class GameplayUI : MonoBehaviour
         CargoPanel.SetActive(false);
     }
 
-    //public void GoToMainMenu()
-    //{
-    //    Time.timeScale = 1.0f;
-    //    SceneManager.LoadScene(0);
-    //}
+    public void GoToMainMenu()
+    {
+        Time.timeScale = 1.0f;
+        SceneManager.LoadScene(0);
+    }
 
     public void ExitGame()
     {
