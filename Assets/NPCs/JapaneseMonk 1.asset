@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63fc0d872f9d17c45b297db064e78919, type: 3}
+  m_Name: JapaneseMonk 1
+  m_EditorClassIdentifier: Assembly-CSharp::NPCDatas
+  docDatas:
+  - {fileID: 11400000, guid: f5328d90d86b6cd4ea507fbf91454fdc, type: 2}
+  - {fileID: 11400000, guid: 81ce5a03c0d9beb429b1a59ea2953402, type: 2}
+  NPCSprite: {fileID: 7962644223748816215, guid: 7a7ae5592fd0e7d4f80a39dcdebecb62, type: 3}

@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class NPCs : MonoBehaviour
 {
+    public Transform docsParent;
+
     public NPCDatas NPCDatas;
 
     private List<GameObject> spawnedDocs = new List<GameObject>();
@@ -63,7 +65,7 @@ public class NPCs : MonoBehaviour
                 continue;
             }
 
-            GameObject docObj = Instantiate(prefab, randPos, Quaternion.identity);
+            GameObject docObj = Instantiate(prefab, randPos, Quaternion.identity, docsParent);
 
             //store the docs object inside the list
             spawnedDocs.Add(docObj);

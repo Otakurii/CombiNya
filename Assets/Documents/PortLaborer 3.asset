@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e33ac4a502f5dbd4e96614ba6758e4bd, type: 3}
-  m_Name: IndianSpiceMerchant
+  m_Name: PortLaborer 3
   m_EditorClassIdentifier: Assembly-CSharp::Documents
   prefabEntries:
   - type: 2
@@ -25,15 +25,15 @@ MonoBehaviour:
   - {fileID: -8704500929520623686, guid: 24e509227f7026c40a156e602c19abce, type: 3}
   docType: 2
   stampAns: 0
-  nameAns: Ravi Chandran
-  originAns: Srivijaya
-  roleAns: 
-  IDPicAns: {fileID: 0}
-  shipAns: Star Cruise
-  captainAns: Sultan Bin Mohammad
-  cargoAns: Fish
+  nameAns: Rakai Wira Dharma
+  originAns: Palembang Port District
+  roleAns: Worker
+  IDPicAns: {fileID: 6046420328631509802, guid: 7a7ae5592fd0e7d4f80a39dcdebecb62, type: 3}
+  shipAns: 
+  captainAns: 
+  cargoAns: 
   signs: {fileID: 3334738622998220081, guid: 8ca114b38c8cc224e83b831068cb24bb, type: 3}
-  logoAns: {fileID: -5018129467461229731, guid: 81081c063a1827c4290be524a5f73d11, type: 3}
-  goodsAns: Black Pepper
-  quantityAns: 2
+  logoAns: {fileID: 0}
+  goodsAns: Ceramic
+  quantityAns: 1
   IDPic: {fileID: 0}

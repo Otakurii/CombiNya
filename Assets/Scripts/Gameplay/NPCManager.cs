@@ -7,6 +7,10 @@ public class NPCManager : MonoBehaviour
 
     int currentIndex = 0;
 
+    //reference to other scripts
+    public HealthManager healthManager;
+    public BoatStocks boatStocks;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -33,6 +37,44 @@ public class NPCManager : MonoBehaviour
 
         //also calls the healthManager script
         //see if deduct health enot
+
+        StampSlot[] slots = FindObjectsOfType<StampSlot>();
+        Debug.Log("Slots found: " + slots.Length);
+
+        bool hasWrong = false;
+        int wrongCount = 0;
+
+
+        foreach (StampSlot slot in slots)
+        {
+            // ignore empty slots
+            if (!slot.hasStamp)
+            {
+                Debug.Log("Missing stamp!");
+                wrongCount++;
+                hasWrong = true;
+                continue;
+            }
+
+            if (!slot.isCorrect)    //if stamp is not correct
+            {
+                Debug.Log("there is wrong answer");
+                wrongCount++;
+                hasWrong = true;
+            }
+        }
+        Debug.Log("hasWrong is " + hasWrong + ", the wrongCount is " + wrongCount);
+        if (hasWrong)       //if there is wrong
+        {
+            Debug.Log("Wrong answer, will lose health. Call HealthManager now");
+
+            healthManager.health -= wrongCount;
+            healthManager.Health();
+        }
+        else
+        {
+            Debug.Log("All correct!");
+        }
     }
 
     void CallNextNPC()
@@ -48,6 +90,7 @@ public class NPCManager : MonoBehaviour
 
         //then only call in the next NPC
         NPCDatas data = ListOfNPCDatas[currentIndex];
+        boatStocks.SetNPCData(ListOfNPCDatas[currentIndex]);
 
         //Debug.Log("Spawning NPC: " + data.name);
 

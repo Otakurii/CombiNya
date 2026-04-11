@@ -5,7 +5,8 @@ public class StampSlot : MonoBehaviour
     public DocumentDatas docData;              // assign from document
     private SpriteRenderer sr;
 
-    //private bool hasStamp = false;
+    public bool hasStamp = false;      //see if has stamp enot
+    public bool isCorrect = false;      //see if its correct enot
 
     private void Start()
     {
@@ -39,15 +40,20 @@ public class StampSlot : MonoBehaviour
             sr.sprite = stamp.stampSpriteIcon;
         }
 
-        //hasStamp = true;
+        hasStamp = true;
+
+        //store result of stamp
+        //isCorrect = (stamp.stampType == docData.stampAns);
 
         // check correctness
         if (stamp.stampType == docData.stampAns)
         {
+            isCorrect = true;
             Debug.Log("Correct stamp");
         }
         else
         {
+            isCorrect = false;
             Debug.Log("Wrong stamp");
         }
     }

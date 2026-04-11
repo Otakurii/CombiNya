@@ -32,7 +32,7 @@ MonoBehaviour:
   shipAns: Star Cruise
   captainAns: Sultan Bin Mohammad
   cargoAns: Fish
-  signs: {fileID: 3334738622998220081, guid: 8ca114b38c8cc224e83b831068cb24bb, type: 3}
+  signs: {fileID: 0}
   logoAns: {fileID: -5018129467461229731, guid: 81081c063a1827c4290be524a5f73d11, type: 3}
   goodsAns: Rice
   quantityAns: 0

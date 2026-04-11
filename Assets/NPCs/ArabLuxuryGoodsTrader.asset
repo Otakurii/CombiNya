@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63fc0d872f9d17c45b297db064e78919, type: 3}
+  m_Name: ArabLuxuryGoodsTrader
+  m_EditorClassIdentifier: Assembly-CSharp::NPCDatas
+  docDatas:
+  - {fileID: 11400000, guid: 85070c7604b3ade478db66e3c0b9bb9a, type: 2}
+  - {fileID: 11400000, guid: b26aa26747c812242805be9ff74330e5, type: 2}
+  - {fileID: 11400000, guid: 84e930a5fe22d76409f9632a1cbb3416, type: 2}
+  - {fileID: 11400000, guid: 536de7634c6b3934485865c3d21cc8d1, type: 2}
+  NPCSprite: {fileID: 3087629172695876473, guid: 7a7ae5592fd0e7d4f80a39dcdebecb62, type: 3}

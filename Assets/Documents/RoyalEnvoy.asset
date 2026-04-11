@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e33ac4a502f5dbd4e96614ba6758e4bd, type: 3}
-  m_Name: IndianSpiceMerchant
+  m_Name: RoyalEnvoy
   m_EditorClassIdentifier: Assembly-CSharp::Documents
   prefabEntries:
-  - type: 2
-    prefab: {fileID: 8984660412083538168, guid: 85a491bb96ad3df46bff659dcf791ff5, type: 3}
+  - type: 0
+    prefab: {fileID: 7309800460679450597, guid: 82802f8dd75cd6240a8482d9b81adcc6, type: 3}
   docSpriteSmall:
   - {fileID: -1247886878105981970, guid: 5df066770737aee41ba45df25ae4dcf9, type: 3}
   - {fileID: 36001294328384769, guid: b053b1a8979f24441a6c4a5ed55ce047, type: 3}
@@ -23,17 +23,17 @@ MonoBehaviour:
   - {fileID: -3904066095602199870, guid: 737084f196f2ce1408943819d0f25295, type: 3}
   - {fileID: 328790315513086827, guid: dfbc39f2830dd4b46bbab0e4d5afc32a, type: 3}
   - {fileID: -8704500929520623686, guid: 24e509227f7026c40a156e602c19abce, type: 3}
-  docType: 2
+  docType: 0
   stampAns: 0
-  nameAns: Ravi Chandran
-  originAns: Srivijaya
-  roleAns: 
-  IDPicAns: {fileID: 0}
-  shipAns: Star Cruise
-  captainAns: Sultan Bin Mohammad
-  cargoAns: Fish
-  signs: {fileID: 3334738622998220081, guid: 8ca114b38c8cc224e83b831068cb24bb, type: 3}
-  logoAns: {fileID: -5018129467461229731, guid: 81081c063a1827c4290be524a5f73d11, type: 3}
-  goodsAns: Black Pepper
-  quantityAns: 2
+  nameAns: Sri Indravarman
+  originAns: Palembang
+  roleAns: Diplomatic Messenger
+  IDPicAns: {fileID: 2017113261478989220, guid: 7a7ae5592fd0e7d4f80a39dcdebecb62, type: 3}
+  shipAns: 
+  captainAns: 
+  cargoAns: 
+  signs: {fileID: 0}
+  logoAns: {fileID: 0}
+  goodsAns: 
+  quantityAns: 
   IDPic: {fileID: 0}
