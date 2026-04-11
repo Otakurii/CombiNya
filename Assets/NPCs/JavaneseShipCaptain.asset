@@ -10,14 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 63fc0d872f9d17c45b297db064e78919, type: 3}
-  m_Name: TestNPCDatas
+  m_Name: JavaneseShipCaptain
   m_EditorClassIdentifier: Assembly-CSharp::NPCDatas
   docDatas:
-  - {fileID: 11400000, guid: 2fa8b25888cdddc409a12ef04b2c662f, type: 2}
   - {fileID: 11400000, guid: f4d19a9b244f8af47ad8b12369bd93ce, type: 2}
-  - {fileID: 11400000, guid: 3d91c762a960be74286d14580062db69, type: 2}
-  NPCSprite: {fileID: 21300000, guid: 68564f74dd9f85642936e0a3f34bf9be, type: 3}
-  NPCDialogues:
-  - hi
-  - testing
-  - 123
+  - {fileID: 11400000, guid: f704ff7bf8202c44f8236f34624e19e0, type: 2}
+  NPCSprite: {fileID: 8798716461247967889, guid: 7a7ae5592fd0e7d4f80a39dcdebecb62, type: 3}

@@ -120,6 +120,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -132,7 +145,7 @@ TextureImporter:
         width: 452
         height: 403
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -149,56 +162,12 @@ TextureImporter:
       name: Player life_1
       rect:
         serializedVersion: 2
-        x: 675
-        y: 622
-        width: 452
-        height: 403
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: d7f25c604b2884650800000000000000
-      internalID: 6217362995304279933
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Player life_2
-      rect:
-        serializedVersion: 2
-        x: 1224
-        y: 619
-        width: 452
-        height: 403
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 44d85d1f4598388f0800000000000000
-      internalID: -539436532426764988
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Player life_3
-      rect:
-        serializedVersion: 2
         x: 119
         y: 135
         width: 465
         height: 393
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -211,121 +180,11 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
-    - serializedVersion: 2
-      name: Player life_4
-      rect:
-        serializedVersion: 2
-        x: 665
-        y: 141
-        width: 465
-        height: 393
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 5ae5613ff8b86ee50800000000000000
-      internalID: 6838306534583590565
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Player life_5
-      rect:
-        serializedVersion: 2
-        x: 1216
-        y: 146
-        width: 465
-        height: 393
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 192bf3cb913eabc90800000000000000
-      internalID: -7153155358452632943
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Player life_6
-      rect:
-        serializedVersion: 2
-        x: 891
-        y: 131
-        width: 8
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: c60bd9ae11d4efbe0800000000000000
-      internalID: -1441630091365994388
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Player life_7
-      rect:
-        serializedVersion: 2
-        x: 1442
-        y: 136
-        width: 8
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 54305ea49a4f4cdd0800000000000000
-      internalID: -2466577687949016251
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Player life_8
-      rect:
-        serializedVersion: 2
-        x: 345
-        y: 125
-        width: 8
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 403950b74ea5cfa80800000000000000
-      internalID: -8431764464981404924
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 321750edb4b8e184f97b6b9dd961ca90
     internalID: 0
     vertices: []
     indices: 
@@ -336,9 +195,8 @@ TextureImporter:
       entries: []
     nameFileIdTable:
       Player life_0: -5398096686413753615
-      Player life_1: 6217362995304279933
+      Player life_1: -3045614946074460647
       Player life_2: -539436532426764988
-      Player life_3: -3045614946074460647
       Player life_4: 6838306534583590565
       Player life_5: -7153155358452632943
       Player life_6: -1441630091365994388

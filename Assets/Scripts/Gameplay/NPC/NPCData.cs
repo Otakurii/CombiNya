@@ -9,7 +9,7 @@ public class NPCDatas : ScriptableObject
     public DocumentDatas[] docDatas;
 
     public Sprite NPCSprite;            //sprite of NPC
-    public string[] NPCDialogues;       //dialogues of NPC
+    //public string[] NPCDialogues;       //dialogues of NPC
 
 
     public Sprite GetNPCSprite()

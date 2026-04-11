@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e33ac4a502f5dbd4e96614ba6758e4bd, type: 3}
+  m_Name: JavaneseShipCaptain
+  m_EditorClassIdentifier: Assembly-CSharp::Documents
+  prefabEntries:
+  - type: 1
+    prefab: {fileID: 5001216368815450343, guid: b2d374ad38705f744addfb1b29c8f8ca, type: 3}
+  docSpriteSmall:
+  - {fileID: -1247886878105981970, guid: 5df066770737aee41ba45df25ae4dcf9, type: 3}
+  - {fileID: 36001294328384769, guid: b053b1a8979f24441a6c4a5ed55ce047, type: 3}
+  - {fileID: -6963912225028141737, guid: ee2cd5a0fceac6749b433df5a4702445, type: 3}
+  docSpriteBig:
+  - {fileID: -3904066095602199870, guid: 737084f196f2ce1408943819d0f25295, type: 3}
+  - {fileID: 328790315513086827, guid: dfbc39f2830dd4b46bbab0e4d5afc32a, type: 3}
+  - {fileID: -8704500929520623686, guid: 24e509227f7026c40a156e602c19abce, type: 3}
+  docType: 1
+  stampAns: 0
+  nameAns: 
+  originAns: Kedu, Java
+  roleAns: 
+  IDPicAns: {fileID: 0}
+  shipAns: Garuda Laut
+  captainAns: Rakai Wira Dharma
+  cargoAns: Rice
+  signs: {fileID: 3334738622998220081, guid: 8ca114b38c8cc224e83b831068cb24bb, type: 3}
+  logoAns: {fileID: -5018129467461229731, guid: 81081c063a1827c4290be524a5f73d11, type: 3}
+  goodsAns: 
+  quantityAns: 
+  IDPic: {fileID: 0}

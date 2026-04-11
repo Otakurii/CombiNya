@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
@@ -5,20 +6,45 @@ public class NPCs : MonoBehaviour
 {
     public NPCDatas NPCDatas;
 
+    private List<GameObject> spawnedDocs = new List<GameObject>();
+
     private SpriteRenderer spriteRenderer;
-    [SerializeField] public TMP_Text dialogueTexts;
+    //[SerializeField] public TMP_Text dialogueTexts;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        //spriteRenderer = GetComponent<SpriteRenderer>();
+
+        //SpawnDocs();
+        //SpawnNPC();
+    }
+
+    public void SpawnNPC()
+    {
         spriteRenderer = GetComponent<SpriteRenderer>();
 
+        if (spriteRenderer == null)
+        {
+            Debug.LogError("No SpriteRenderer on NPC!");
+            return;
+        }
+
+        if (NPCDatas == null)
+        {
+            Debug.LogError("NPCDatas is NULL!");
+            return;
+        }
+
+        spriteRenderer.sprite = NPCDatas.NPCSprite;
+
         SpawnDocs();
-        SpawnNPC();
     }
 
     void SpawnDocs()
     {
+        spawnedDocs.Clear();    //clear the list just in case
+
         //instantiate docs 
         for (int i = 0; i < NPCDatas.docDatas.Length; i++)
         {
@@ -39,6 +65,9 @@ public class NPCs : MonoBehaviour
 
             GameObject docObj = Instantiate(prefab, randPos, Quaternion.identity);
 
+            //store the docs object inside the list
+            spawnedDocs.Add(docObj);
+
             //assign data after instantiate prefab
             Documents doc = docObj.GetComponent<Documents>();
             if (doc != null)
@@ -48,9 +77,16 @@ public class NPCs : MonoBehaviour
         }
     }
 
-    void SpawnNPC()
+    public void DespawnDocs()
     {
-        spriteRenderer.sprite = NPCDatas.NPCSprite;
-    }
+        foreach (GameObject doc in spawnedDocs)
+        {
+            if (doc != null)
+            {
+                Destroy(doc);
+            }
+        }
 
+        spawnedDocs.Clear();
+    }
 }
