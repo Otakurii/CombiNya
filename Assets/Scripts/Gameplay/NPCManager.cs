@@ -35,7 +35,7 @@ public class NPCManager : MonoBehaviour
 
     void CheckAns()
     {
-        Debug.Log("Check Ans");
+        //Debug.Log("Check Ans");
         //this function to check all the answer if correct
         //calls from the stampslot script there
 
@@ -43,7 +43,7 @@ public class NPCManager : MonoBehaviour
         //see if deduct health enot
 
         StampSlot[] slots = FindObjectsOfType<StampSlot>();
-        Debug.Log("Slots found: " + slots.Length);
+        //Debug.Log("Slots found: " + slots.Length);
 
         bool hasWrong = false;
         int wrongCount = 0;
@@ -54,7 +54,7 @@ public class NPCManager : MonoBehaviour
             // ignore empty slots
             if (!slot.hasStamp)
             {
-                Debug.Log("Missing stamp!");
+                //Debug.Log("Missing stamp!");
                 wrongCount++;
                 hasWrong = true;
                 continue;
@@ -62,12 +62,12 @@ public class NPCManager : MonoBehaviour
 
             if (!slot.isCorrect)    //if stamp is not correct
             {
-                Debug.Log("there is wrong answer");
+                //Debug.Log("there is wrong answer");
                 wrongCount++;
                 hasWrong = true;
             }
         }
-        Debug.Log("hasWrong is " + hasWrong + ", the wrongCount is " + wrongCount);
+        //Debug.Log("hasWrong is " + hasWrong + ", the wrongCount is " + wrongCount);
         if (hasWrong)       //if there is wrong
         {
             //Debug.Log("Wrong answer, will lose health. Call HealthManager now");
@@ -77,7 +77,7 @@ public class NPCManager : MonoBehaviour
         }
         else
         {
-            Debug.Log("All correct!");
+            //Debug.Log("All correct!");
         }
     }
 
@@ -85,7 +85,7 @@ public class NPCManager : MonoBehaviour
     {
         if (currentIndex >= ListOfNPCDatas.Length)
         {
-            Debug.Log("No more NPCs, player won");
+            //Debug.Log("No more NPCs, player won");
             GameplayUI gameplayUI = FindFirstObjectByType<GameplayUI>();
             gameplayUI.OpenEndGamePanel();
             return;

@@ -17,5 +17,7 @@ public class GoodsPermitDocument : Documents
         nameText.text = docDatas.nameAns;
         goodsText.text = docDatas.goodsAns;
         quantityText.text = docDatas.quantityAns;
+
+        signPic.sprite = docDatas.signs;
     }
 }
