@@ -2894,9 +2894,7 @@ MonoBehaviour:
     m_Bits: 64
   leftClickAction: {fileID: 1120369429361536294, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   stampSpriteIcon: {fileID: -8265131900152869391, guid: d0d622e00cc46444f9b7ab45fb13fe15, type: 3}
-  draggingStampIcon: {fileID: 5950479078901320094, guid: 57fa63ce00c369f42b8bb9beda21cd29, type: 3}
   stampType: 0
-  stampSFX: StampSFX
 --- !u!61 &654454156
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3318,9 +3316,7 @@ MonoBehaviour:
     m_Bits: 64
   leftClickAction: {fileID: 1120369429361536294, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   stampSpriteIcon: {fileID: -2018853362880240837, guid: 11058db926d36bb4ab4c6e76b211a80f, type: 3}
-  draggingStampIcon: {fileID: -280335104028481896, guid: 75c25c4ad7f7c774f8a11f8ac7eaafda, type: 3}
   stampType: 1
-  stampSFX: StampSFX
 --- !u!61 &732102896
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3780,8 +3776,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 012eb84ddf0c746478ce36dd54d568d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NPCs
-  docsParent: {fileID: 0}
   NPCDatas: {fileID: 0}
+  dialogueTexts: {fileID: 0}
 --- !u!1 &919613193
 GameObject:
   m_ObjectHideFlags: 0
@@ -6231,8 +6227,6 @@ MonoBehaviour:
   leftClickAction: {fileID: 1120369429361536294, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   scaleBigger: 0.6
   maxSortingInt: 1
-  PickDocSFX: PickDocSFX
-  PlaceDocSFX: PlaceDocSFX
 --- !u!4 &1846565337
 Transform:
   m_ObjectHideFlags: 0
