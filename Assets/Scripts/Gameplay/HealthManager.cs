@@ -15,6 +15,9 @@ public class HealthManager : MonoBehaviour
     [SerializeField] public Sprite emptyHeart;
     public bool alive = true;
 
+    [Header("SFX")]
+    public string dyingSFX;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -61,6 +64,7 @@ public class HealthManager : MonoBehaviour
 
         if (health <= 0)
         {
+            AudioManager.Instance.PlaySFX(dyingSFX);
             health = 0;
             alive = false;
             //can call game over menu

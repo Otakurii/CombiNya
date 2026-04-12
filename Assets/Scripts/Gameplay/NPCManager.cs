@@ -11,6 +11,10 @@ public class NPCManager : MonoBehaviour
     public HealthManager healthManager;
     public BoatStocks boatStocks;
 
+    [Header("SFX")]
+    public string deductHeartSFX;
+    //public string nextPersonSFX;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -66,8 +70,8 @@ public class NPCManager : MonoBehaviour
         Debug.Log("hasWrong is " + hasWrong + ", the wrongCount is " + wrongCount);
         if (hasWrong)       //if there is wrong
         {
-            Debug.Log("Wrong answer, will lose health. Call HealthManager now");
-
+            //Debug.Log("Wrong answer, will lose health. Call HealthManager now");
+            AudioManager.Instance.PlaySFX(deductHeartSFX);
             healthManager.health -= wrongCount;
             healthManager.Health();
         }
@@ -81,7 +85,9 @@ public class NPCManager : MonoBehaviour
     {
         if (currentIndex >= ListOfNPCDatas.Length)
         {
-            Debug.Log("No more NPCs");
+            Debug.Log("No more NPCs, player won");
+            GameplayUI gameplayUI = FindFirstObjectByType<GameplayUI>();
+            gameplayUI.OpenEndGamePanel();
             return;
         }
 
@@ -92,6 +98,7 @@ public class NPCManager : MonoBehaviour
         NPCDatas data = ListOfNPCDatas[currentIndex];
         boatStocks.SetNPCData(ListOfNPCDatas[currentIndex]);
 
+        //AudioManager.Instance.PlaySFX(nextPersonSFX);
         //Debug.Log("Spawning NPC: " + data.name);
 
         //assign data BEFORE spawning

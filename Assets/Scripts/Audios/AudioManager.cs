@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class AudioManager : MonoBehaviour
 {
+    public static AudioManager Instance;
     public Sound[] BGMSound, SFXSound;
 
     public AudioMixer mainAudioMixer;
@@ -14,6 +15,11 @@ public class AudioManager : MonoBehaviour
 
     public void Awake()
     {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+
         LoadSavedVolumes();
 
         SceneManager.sceneLoaded += OnSceneLoaded;

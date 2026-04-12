@@ -27,6 +27,10 @@ public class DragnDropSystem : MonoBehaviour
 
     private bool isOnTable = true;
 
+    [Header("SFX")]
+    public string PickDocSFX;
+    public string PlaceDocSFX;
+
     private void Awake()
     {
         cam = Camera.main;
@@ -101,6 +105,7 @@ public class DragnDropSystem : MonoBehaviour
 
             if (doc != null)
             {
+                AudioManager.Instance.PlaySFX(PickDocSFX);
                 dragingDocSprite = doc.gameObject;
 
                 offset = dragingDocSprite.transform.position - (Vector3)worldPos;
@@ -154,6 +159,8 @@ public class DragnDropSystem : MonoBehaviour
         {
             canvas.sortingOrder = maxSortingInt;
         }
+
+        AudioManager.Instance.PlaySFX(PlaceDocSFX);
 
         // reset scale
         dragingDocSprite.transform.localScale = oriScale;

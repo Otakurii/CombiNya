@@ -9,9 +9,22 @@ public class GameplayUI : MonoBehaviour
     public GameObject PauseMenuPanel;
     public GameObject SettingsPanel;
     public GameObject CargoPanel;
+    public GameObject GameOverPanel;
+    public GameObject EndGamePanel;
+    public GameObject GuidePanel;
+    public GameObject IntroStoryPanel;
+
+    [Header("IntroStory Panning")]
+    [SerializeField] public float speed = 3f;
+    public float targetY = 500f;
+    private bool isPanning = false;
 
     [Header("Input (assign InputActionReferences)")]
     public InputActionReference escButton;             //mouse's delta cursor
+
+    [Header("SFX")]
+    public string portWavesSFX;
+    public string endGameSFX;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -19,9 +32,7 @@ public class GameplayUI : MonoBehaviour
     {
         Time.timeScale = 1.0f;
 
-        PauseMenuPanel.SetActive(false);
-        SettingsPanel.SetActive(false);
-        CargoPanel.SetActive(false);
+        OpenIntroStoryPanel();
     }
 
     // Update is called once per frame
@@ -30,6 +41,19 @@ public class GameplayUI : MonoBehaviour
         if (escButton?.action != null && escButton.action.IsPressed())
         {
             OpenPauseMenu();
+        }
+
+        //update the intro story panel
+        if (!isPanning) return;
+        Transform t = IntroStoryPanel.transform;
+        if (t.position.y < targetY)
+        {
+            t.position += new Vector3(0, speed * Time.deltaTime, 0);
+            //Debug.Log("position now at " + t.position.y);
+        }
+        else
+        {
+            isPanning = false; // stop moving
         }
     }
 
@@ -54,13 +78,24 @@ public class GameplayUI : MonoBehaviour
         PauseMenuPanel.SetActive(true);
         SettingsPanel.SetActive(false);
         CargoPanel.SetActive(false);
+
+        GameOverPanel.SetActive(false);
+        EndGamePanel.SetActive(false);
+        GuidePanel.SetActive(false);
+        IntroStoryPanel.SetActive(false);
     }
+
 
     public void OpenSettingsMenu()
     {
         PauseMenuPanel.SetActive(false);
         SettingsPanel.SetActive(true);
         CargoPanel.SetActive(false);
+
+        GameOverPanel.SetActive(false);
+        EndGamePanel.SetActive(false);
+        GuidePanel.SetActive(false);
+        IntroStoryPanel.SetActive(false);
     }
 
     public void OpenCargoPanel()
@@ -68,6 +103,49 @@ public class GameplayUI : MonoBehaviour
         PauseMenuPanel.SetActive(false);
         SettingsPanel.SetActive(false);
         CargoPanel.SetActive(true);
+
+        GameOverPanel.SetActive(false);
+        EndGamePanel.SetActive(false);
+        GuidePanel.SetActive(false);
+        IntroStoryPanel.SetActive(false);
+
+        AudioManager.Instance.PlaySFX(portWavesSFX);
+    }
+    public void OpenEndGamePanel()
+    {
+        PauseMenuPanel.SetActive(false);
+        SettingsPanel.SetActive(false);
+        CargoPanel.SetActive(false);
+
+        GameOverPanel.SetActive(false);
+        EndGamePanel.SetActive(true);
+        GuidePanel.SetActive(false);
+        IntroStoryPanel.SetActive(false);
+
+        AudioManager.Instance.PlaySFX(endGameSFX);
+    }
+    public void OpenGuidePanel()
+    {
+        PauseMenuPanel.SetActive(false);
+        SettingsPanel.SetActive(false);
+        CargoPanel.SetActive(false);
+
+        GameOverPanel.SetActive(false);
+        EndGamePanel.SetActive(false);
+        GuidePanel.SetActive(true);
+        IntroStoryPanel.SetActive(false);
+    }
+    public void OpenIntroStoryPanel()
+    {
+        isPanning = true;
+        PauseMenuPanel.SetActive(false);
+        SettingsPanel.SetActive(false);
+        CargoPanel.SetActive(false);
+
+        GameOverPanel.SetActive(false);
+        EndGamePanel.SetActive(false);
+        GuidePanel.SetActive(false);
+        IntroStoryPanel.SetActive(true);
     }
 
     public void CloseAllMenu()
@@ -77,6 +155,11 @@ public class GameplayUI : MonoBehaviour
         PauseMenuPanel.SetActive(false);
         SettingsPanel.SetActive(false);
         CargoPanel.SetActive(false);
+
+        GameOverPanel.SetActive(false);
+        EndGamePanel.SetActive(false);
+        GuidePanel.SetActive(false);
+        IntroStoryPanel.SetActive(false);
     }
 
     public void GoToMainMenu()

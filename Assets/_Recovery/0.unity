@@ -6014,15 +6014,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 8ef8f63338e95ab43a2ee573efcdde47, type: 2}
   - {fileID: 11400000, guid: 6932d6667b41aad4790b4f91abf115a3, type: 2}
   - {fileID: 11400000, guid: f8eed64a011f74642aa0065c4d384033, type: 2}
-  - {fileID: 11400000, guid: 8ef8f63338e95ab43a2ee573efcdde47, type: 2}
   - {fileID: 11400000, guid: e3f1ffcf1e32fe445b814ecc9758d7ed, type: 2}
-  - {fileID: 11400000, guid: dc2007d5f5a11e44f8a36171e2871097, type: 2}
   - {fileID: 11400000, guid: 154ce8fa3661c3841a02843d459e282d, type: 2}
   - {fileID: 11400000, guid: 445966a6ec1b8ea4884cc220cc7fba36, type: 2}
   - {fileID: 11400000, guid: a861fde841957fc429acb2ff725e28e3, type: 2}
-  - {fileID: 11400000, guid: e355f3188f102c347ad1e32d7e221bd1, type: 2}
-  - {fileID: 11400000, guid: 5ea97c39ac415f64f9fee9f6a5941f85, type: 2}
-  - {fileID: 11400000, guid: d6321895cb10ae940ae902790c9ca341, type: 2}
   NPCPosition: {fileID: 840935034}
   healthManager: {fileID: 753513194}
   boatStocks: {fileID: 1237478169}

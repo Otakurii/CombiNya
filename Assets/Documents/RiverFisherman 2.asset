@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e33ac4a502f5dbd4e96614ba6758e4bd, type: 3}
-  m_Name: JapaneseMonk 2
+  m_Name: RiverFisherman 2
   m_EditorClassIdentifier: Assembly-CSharp::Documents
   prefabEntries:
   - type: 2
@@ -24,16 +24,16 @@ MonoBehaviour:
   - {fileID: 328790315513086827, guid: dfbc39f2830dd4b46bbab0e4d5afc32a, type: 3}
   - {fileID: -8704500929520623686, guid: 24e509227f7026c40a156e602c19abce, type: 3}
   docType: 2
-  stampAns: 0
-  nameAns: Nakamura Karuma
-  originAns: Musi River, Sumatra
-  roleAns: Monk
-  IDPicAns: {fileID: 7962644223748816215, guid: 7a7ae5592fd0e7d4f80a39dcdebecb62, type: 3}
+  stampAns: 1
+  nameAns: Muhammad bin Abdullah
+  originAns: Kampung Bapak
+  roleAns: Royalty
+  IDPicAns: {fileID: 2017113261478989220, guid: 7a7ae5592fd0e7d4f80a39dcdebecb62, type: 3}
   shipAns: 
   captainAns: 
   cargoAns: 
   signs: {fileID: 3334738622998220081, guid: 8ca114b38c8cc224e83b831068cb24bb, type: 3}
   logoAns: {fileID: 0}
-  goodsAns: Tea Leaves
-  quantityAns: 4
+  goodsAns: Gold
+  quantityAns: 5
   IDPic: {fileID: 0}

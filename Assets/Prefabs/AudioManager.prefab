@@ -49,7 +49,29 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 32277a18244f55e40acb553bbaa7a3b8, type: 3}
   - Name: BGM Gameplay
     clip: {fileID: 8300000, guid: bb73e07cbf636a94a9e8098852287179, type: 3}
-  SFXSound: []
+  SFXSound:
+  - Name: ButtonSFX
+    clip: {fileID: 8300000, guid: 3c5fdcad56b83f44f98686940fec4705, type: 3}
+  - Name: DeductHeartSFX
+    clip: {fileID: 8300000, guid: 992f59e083435ca4bab5e23bfd06c7ec, type: 3}
+  - Name: OpenUISFX
+    clip: {fileID: 8300000, guid: f71e9a82e0ea7e748b50c5245ec0ea1c, type: 3}
+  - Name: StampSFX
+    clip: {fileID: 8300000, guid: e59e40bd91f7c0441b87bcf812b5a4a6, type: 3}
+  - Name: ToCargoSFX
+    clip: {fileID: 8300000, guid: b079203420dc78d409efc00171aea14b, type: 3}
+  - Name: PickDocSFX
+    clip: {fileID: 8300000, guid: 7a0c804710c2ea34ea025f586a57914f, type: 3}
+  - Name: PlaceDocSFX
+    clip: {fileID: 8300000, guid: a424cd220f229404baada29b6c99e966, type: 3}
+  - Name: NextPersonSFX
+    clip: {fileID: 8300000, guid: dee6c68290f371243a74e6c593c834a6, type: 3}
+  - Name: PortWavesSFX
+    clip: {fileID: 8300000, guid: b62d3c2ba7e01aa43803ac5bac48ea21, type: 3}
+  - Name: GameOverSFX
+    clip: {fileID: 8300000, guid: 2cfb2f92b9f6005478e4744fb24ab1cf, type: 3}
+  - Name: EndGameSFX
+    clip: {fileID: 8300000, guid: a6fe1bcdec1f4834cb822e2447b2d728, type: 3}
   mainAudioMixer: {fileID: 24100000, guid: e5af860ea8edd0d4786b6724d76e068d, type: 2}
   BGMSource: {fileID: 0}
   SFXSource: {fileID: 0}

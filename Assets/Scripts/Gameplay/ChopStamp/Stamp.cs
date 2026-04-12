@@ -29,6 +29,9 @@ public class Stamp : MonoBehaviour
     private Sprite originalSprite;
     private int originalSortingOrder;
 
+    [Header("SFX")]
+    public string stampSFX;
+
     private void Awake()
     {
         cam = Camera.main;
@@ -144,6 +147,7 @@ public class Stamp : MonoBehaviour
 
             if (hit.TryGetComponent(out StampSlot slot))
             {
+                AudioManager.Instance.PlaySFX(stampSFX);
                 //Debug.Log("Try stamping");
                 slot.PlaceStamp(this);
             }
